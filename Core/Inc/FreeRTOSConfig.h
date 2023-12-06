@@ -101,6 +101,13 @@
 #define configUSE_OS2_TIMER                  1
 #define configUSE_OS2_MUTEX                  1
 
+/* Tickless */
+extern void lpm_allow_check(uint32_t* exceptIdleTick);
+#define configUSE_TICKLESS_IDLE                 1
+#define configEXPECTED_IDLE_TIME_BEFORE_SLEEP   10
+#define configPRE_SUPPRESS_TICKS_AND_SLEEP_PROCESSING( x ) lpm_allow_check( x )
+
+
 /* Set the following definitions to 1 to include the API function, or zero
 to exclude the API function. */
 #define INCLUDE_vTaskPrioritySet             1

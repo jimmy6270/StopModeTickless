@@ -3481,7 +3481,7 @@ static portTASK_FUNCTION( prvIdleTask, pvParameters )
 					/* Define the following macro to set xExpectedIdleTime to 0
 					if the application does not want
 					portSUPPRESS_TICKS_AND_SLEEP() to be called. */
-					configPRE_SUPPRESS_TICKS_AND_SLEEP_PROCESSING( xExpectedIdleTime );
+					configPRE_SUPPRESS_TICKS_AND_SLEEP_PROCESSING( &xExpectedIdleTime );
 
 					if( xExpectedIdleTime >= configEXPECTED_IDLE_TIME_BEFORE_SLEEP )
 					{

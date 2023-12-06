@@ -23,7 +23,7 @@
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
-
+#if 0
 RTC_HandleTypeDef hrtc;
 
 /* RTC init function */
@@ -102,7 +102,7 @@ void MX_RTC_Init(void)
   /* USER CODE END RTC_Init 2 */
 
 }
-
+#endif
 void HAL_RTC_MspInit(RTC_HandleTypeDef* rtcHandle)
 {
 

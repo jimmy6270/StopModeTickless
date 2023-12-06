@@ -32,7 +32,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "rtc-board.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,14 +98,14 @@ int main(void)
   MX_DMA_Init();
   MX_IWDG_Init();
   MX_LPUART1_UART_Init();
-  MX_RTC_Init();
+//  MX_RTC_Init();
   MX_TIM6_Init();
   MX_ADC1_Init();
   MX_I2C1_Init();
   MX_I2C2_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  RtcInit();
   /* USER CODE END 2 */
 
   /* Init scheduler */
