@@ -28,6 +28,12 @@ static void board_periph_deinit(void)
 {
     GPIO_InitTypeDef GPIO_InitStruct = {0};
 
+    GPIO_InitStruct.Pin   = GPIO_PIN_0 | GPIO_PIN_1;
+    GPIO_InitStruct.Mode  = GPIO_MODE_ANALOG;
+    GPIO_InitStruct.Pull  = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
+
     GPIO_InitStruct.Pin   = NFC_DECT_Pin;
     GPIO_InitStruct.Mode  = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull  = GPIO_NOPULL;
@@ -47,7 +53,7 @@ static void board_periph_deinit(void)
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
     HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(NFC_PWR_EN_GPIO_Port, NFC_PWR_EN_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(NFC_PWR_EN_GPIO_Port, NFC_PWR_EN_Pin, GPIO_PIN_SET);
     HAL_GPIO_WritePin(SENSOR_PWR_EN_GPIO_Port, SENSOR_PWR_EN_Pin, GPIO_PIN_RESET);
     HAL_GPIO_WritePin(MOTION_PWR_EN_GPIO_Port, MOTION_PWR_EN_Pin, GPIO_PIN_RESET);
     HAL_GPIO_WritePin(NB_RESET_GPIO_Port, NB_RESET_Pin, GPIO_PIN_RESET);
